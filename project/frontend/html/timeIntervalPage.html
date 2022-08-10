@@ -1,0 +1,96 @@
+<div class="timeIntervalPage">
+  <div class="portlet">
+    <div class="portlet-title">
+      <h3 class="page-title">列表</h3>
+    </div>
+    <div class="portlet-body">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- BEGIN Portlet PORTLET-->
+          <div class="portlet ">
+            <div class="portlet-body">
+              <div class="" style="min-height:400px">
+                <div class="table-toolbar">
+                  <!--时间插件-->
+                  <div class="form-body">
+                    <div class="form-group">
+                      <label class="control-label col-md-3">请选择查询日期</label>
+
+                      <div class="col-md-4" style="width: 340px">
+                        <div class="input-group input-large date-picker input-daterange" data-date-format="yyyy-mm-dd">
+                          <input type="text" class="form-control inputStartTime date-picker"
+                                 data-date-format="yyyy-mm-dd" name="from">
+                          <span class="input-group-addon">to </span>
+                          <input type="text" class="form-control inputEndTime date-picker" data-date-format="yyyy-mm-dd"
+                                 name="to">
+                        </div>
+                        <!-- /input-group -->
+                      </div>
+                      <div class="col-md-1">
+                        <button class="btn btn-danger buttonGo">Go</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <table class="table table-striped table-hover table-bordered" id="table_punch_card">
+                  <thead>
+                  <tr>
+                    <th>
+                      员工名称
+                    </th>
+                    <th>
+                      状态
+                    </th>
+                    <th>
+                      开始时间
+                    </th>
+                    <th>
+                      结束时间
+                    </th>
+                    <th>
+                      工作时长
+                    </th>
+                    <th>
+                      取整后工时
+                    </th>
+                    <th>
+                      操作
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody id="tbody_punch_card">
+                  <tr>
+                    <th>test</th>
+                    <th>test</th>
+                    <th>test</th>
+                    <th>test</th>
+                    <th>test</th>
+                    <th>test</th>
+                    <th>
+                      <button type="button" class="btn btn-success">btn</button>
+                      <a href="javascript:void(0)" class="btn default btn-xs blue buttonLookWater"><i
+                              class="fa fa-edit"></i>bnt</a>
+                      <a href="javascript:void(0)" class="btn default btn-xs red btnPoundageDelete"><i
+                              class="fa fa-times"></i>删除</a>
+                      <button class="btn btn-xs purple printBtn" style="display: inline-block">
+                        <i class="fa fa-print"></i>打印
+                      </button>
+                      <a href="javascript:;" data-status="confirmed" data-order="62d9ffa9179e88986c5af89f"
+                         class="btn default btn-xs blue button_order_info"><i class="fa fa-eye"></i>详情</a>
+                    </th>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- END Portlet PORTLET-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/timeIntervalPage.js"></script>
+<script>
+  timeIntervalPageJS.init();
+</script>

@@ -1,0 +1,193 @@
+<div class="othersPage">
+  <div class="portlet">
+    <div class="portlet-title">
+      <h3 class="page-title">列表</h3>
+      <!--头部导航-->
+      <div class="page-bar">
+        <ul class="page-breadcrumb">
+          <li>
+            <i class="fa fa-home"></i>
+            <a href="javascript:void(0)">电子称管理</a>
+            <i class="fa fa-angle-right"></i>
+          </li>
+          <li>
+            <a href="javascript:void(0);">编辑电子称</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="portlet-body">
+      <!--按钮列表-->
+      <div class="btn-group">
+        <button id="showModalBtn" class="btn green">添加会员<i class="fa fa-plus"></i>
+        </button>
+        <input type="file" id="importMember_file" name="importMember_file" style="display: none;">
+        <button type="button" class="btn btn-success importMemberBtn" style="margin-left: 10px"><i class="glyphicon glyphicon-save"></i>导入</button>
+        <button type="button" class="btn btn-success exportMemberBtn" style="margin-left: 10px;"><i class="glyphicon glyphicon-open"></i>导出</button>
+      </div>
+
+      <!--下拉框-->
+      <form class="form-horizontal" role="form" style="margin-top: 24px">
+        <div class="form-body">
+          <div class="form-group col-md-6">
+            <label class="col-md-3 control-label">平台：</label>
+            <div class="col-md-7">
+              <select class="form-control" id="templateListSelect"><option value="panda">熊猫外卖</option></select>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label class="col-md-3 control-label">平台店铺：</label>
+            <div class="col-md-7">
+              <select class="form-control" id="platformStoreSelect"><option value="">全部</option><option value="600e396a056b3f7d6a84a596">熊猫一店</option><option value="62be4ae447bd76400eadfccf">deliverect</option></select>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <div class="row">
+        <div class="col-md-12">
+          <!-- BEGIN Portlet PORTLET-->
+          <div class="portlet ">
+            <div class="portlet-body">
+              <div class="" style="min-height:400px">
+                <div class="table-toolbar">
+                  <div class="col-md-12">
+                    <!--时间插件-->
+                    <div class="form-body">
+                      <div class="form-group">
+                        <label class="control-label col-md-3">请选择查询日期</label>
+
+                        <div class="col-md-4" style="width: 340px">
+                          <div class="input-group input-large date-picker input-daterange" data-date-format="yyyy-mm-dd">
+                            <input type="text" class="form-control inputStartTime date-picker"
+                                   data-date-format="yyyy-mm-dd" name="from">
+                            <span class="input-group-addon">to </span>
+                            <input type="text" class="form-control inputEndTime date-picker" data-date-format="yyyy-mm-dd"
+                                   name="to">
+                          </div>
+                          <!-- /input-group -->
+                        </div>
+                        <div class="col-md-1">
+                          <button class="btn btn-danger buttonGo">Go</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END Portlet PORTLET-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--添加用餐 modal 开始-->
+<div class="modal fade" id="addDineGroupModal" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4 class="modal-title">添加菜品</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" role="form" id="addNewDishesModalForm">
+          <div class="form-body">
+            <div class="form-group">
+              <label class="col-md-3 control-label">菜品名称</label>
+              <div class="col-md-9">
+                <div class="input-group">
+                  <span class="input-group-addon">默认</span>
+                  <input type="text" class="form-control dishesNameDefault" name="dishesNameDefault">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label"></label>
+              <div class="col-md-9">
+                <div class="input-group">
+                  <span class="input-group-addon">中文</span>
+                  <input type="text" class="form-control dishesNameZh" name="dishesNameZh">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label"></label>
+              <div class="col-md-9">
+                <div class="input-group">
+                  <span class="input-group-addon">英文</span>
+                  <input type="text" class="form-control dishesNameEn" name="dishesNameEn">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label">菜品价格</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control dishesPrice" name="dishesPrice">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label">菜品分类</label>
+              <div class="col-md-9">
+                <select class="form-control dishesSort"></select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label">菜品编号</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control dishesNumbering" name="dishesNumbering">
+                <span class="help-block">菜品编号用于菜品检索逻辑</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label">加菜输入数量</label>
+              <div class="col-md-9 radio-list dishesInputCountSet">
+                <label class="radio-inline default" data-value="default">
+                  <input type="radio" name="dishesInputCountSet" value="default" checked> 否 </label>
+                <label class="radio-inline input" data-value="input">
+                  <input type="radio" name="dishesInputCountSet" value="input"> 是 </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label">菜品色块颜色</label>
+              <div class="col-md-9 radio-list dishesBlockColorSet">
+                <label class="radio-inline 0" data-value="0">
+                  <input type="radio" name="dishesBlockColorSet" value="0" checked>
+                  <span class="label" style="background-color: #e0f2f1;color:#404040;">蓝色(默认)</span>
+                </label>
+                <label class="radio-inline 1" data-value="1">
+                  <input type="radio" name="dishesBlockColorSet" value="1">
+                  <span class="label" style="background-color: #f6d5c9;color:#ffffff;">红色</span>
+                </label>
+                <label class="radio-inline 2" data-value="2">
+                  <input type="radio" name="dishesBlockColorSet" value="2">
+                  <span class="label" style="background-color: #a4dfa3;color:#ffffff;">绿色</span>
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label">简介</label>
+              <div class="col-md-9">
+                <textarea class="form-control dishesDesc" rows="6" style="min-width: 100%;resize:none;"></textarea>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn blue addNewDishesModalTrueBtn">确定</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!--添加用餐 modal 结束-->
+
+<script src="js/othersPage.js"></script>
+<script>
+  othersPageJS.init();
+</script>

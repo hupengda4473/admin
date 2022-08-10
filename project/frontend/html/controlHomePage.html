@@ -1,0 +1,82 @@
+<div class="guestShowLogoSet">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- BEGIN Portlet PORTLET-->
+      <div class="portlet">
+        <div class="portlet-title">
+          <h3 class="page-title">
+            Logo设置
+          </h3>
+        </div>
+        <div class="note note-success">
+          <h4 class="block">提示</h4>
+          <p>设置logo图片</p>
+        </div>
+        <div class="portlet-body">
+          <form action="javascript:void(0)" class="form-horizontal form-bordered">
+            <div class="form-body">
+              <div class="form-group last">
+                <label class="control-label col-md-3">选择图片：</label>
+                <div class="col-md-9">
+                  <div class="fileinput fileinput-new" data-provides="fileinput"><input type="hidden">
+                    <div class="fileinput-new thumbnail" style="width: 352px; height: auto;min-height: 200px">
+                      <img class="imageShow" src="" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-actions">
+              <div class="row">
+                <div class="col-md-offset-3 col-md-9">
+                  <button type="submit" class="btn purple addImage"><i class="fa fa-check"></i> 上传图片</button>
+                  <button type="button" class="btn default clearImage">清除设置</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- END Portlet PORTLET-->
+    </div>
+  </div>
+  <!--截取横图操作modal开始-->
+  <div style="display: none;" class="modal fade" id="modalControlBackgroundImage" tabindex="-1" role="basic" aria-hidden="true">
+    <input class="modalControlBackgroundImageFile" type="file" accept="image/*" style="display: none"/>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body" style="padding: 0">
+          <div id="modalControlBackgroundImageClipArea" style="height: 384px;"></div>
+        </div>
+        <div class="modal-footer">
+          <button class="ok btn btn-danger modalControlBackgroundImageOK" style="float: right">确定</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!--截取横图操作modal结束-->
+  <!--删除询问madal 开始-->
+  <div style="display: none;" class="modal fade bs-modal-sm" id="deleteModal" tabindex="-1" role="dialog"
+       aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h3>确定删除客显Logo设置吗？</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn default" data-dismiss="modal">取消</button>
+          <button type="button" class="btn blue " id="deleteModalTrueBtn">确定</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!--删除询问madal 结束-->
+</div>
+<script src="js/controlHomePage.js"></script>
+<script>
+  controlHomePageJS.init();
+</script>
